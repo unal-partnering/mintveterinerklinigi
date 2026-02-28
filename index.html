@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Etiketleri -->
+    <title>Mint Veteriner Polikliniği | Şişli 7/24 Nöbetçi Veteriner</title>
+    <meta name="description" content="İstanbul Şişli Teşvikiye'de 7/24 hizmet veren Mint Veteriner Polikliniği. Can dostlarınız için acil müdahale, cerrahi, laboratuvar ve koruyucu hekimlik hizmetleri.">
+    <meta name="keywords" content="mint veteriner kliniği, şişli veteriner, teşvikiye veteriner, 7/24 nöbetçi veteriner, acil veteriner istanbul, kedi köpek tedavisi, veteriner polikliniği">
+    <meta name="author" content="UNAL Partnerlik">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph (Sosyal Medya Görünümü) -->
+    <meta property="og:title" content="Mint Veteriner Polikliniği | 7/24 Hizmet">
+    <meta property="og:description" content="Can dostlarınız için Şişli Teşvikiye'de 7 gün 24 saat kesintisiz ve şefkatli veterinerlik hizmetleri.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://www.mintveteriner.com">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (İkonlar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS (Hızlı ve modern tasarım için) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Konfigürasyonu -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        mint: {
+                            DEFAULT: '#0e6b5d', /* Logodaki ana yeşil tonu */
+                            dark: '#0a4f44',
+                            light: '#149683',
+                            bg: '#f2f9f8'
+                        },
+                        unal: {
+                            bg: '#1e2336',
+                            gold: '#fbbd05'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(14, 107, 93, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Özel CSS Eklemeleri */
+        body {
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero Arka Planı */
+        .hero-bg {
+            background-color: #111;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15)), url('https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Cam Efekti (Glassmorphism) Navbar */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Özel Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0e6b5d; 
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0a4f44; 
+        }
+
+        /* Buton Hover Efekti */
+        .btn-hover-effect {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-hover-effect::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.2);
+            z-index: -2;
+        }
+        .btn-hover-effect::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.1);
+            transition: all .3s;
+            z-index: -1;
+        }
+        .btn-hover-effect:hover::before {
+            width: 100%;
+        }
+
+        /* Logo Resmi Fallback Stili */
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-white">
+
+    <!-- Üst Bilgi Çubuğu (Top Bar) -->
+    <div class="hidden md:flex justify-between items-center bg-mint-dark text-white px-8 py-2 text-sm font-light">
+        <div class="flex items-center space-x-6">
+            <a href="https://maps.google.com/?q=Teşvikiye, Deryadil Sokağı no:106B, 34357 Şişli/İstanbul" target="_blank" class="hover:text-mint-light transition flex items-center gap-2">
+                <i class="fas fa-map-marker-alt"></i> Teşvikiye, Deryadil Sk. No:106B, Şişli/İstanbul
+            </a>
+            <span class="flex items-center gap-2">
+                <i class="fas fa-clock"></i> 7 Gün 24 Saat Açık
+            </span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="https://www.instagram.com/mintveterinerklinigi/?hl=en" target="_blank" class="hover:text-mint-light transition"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/mintveterinerklinigi/" target="_blank" class="hover:text-mint-light transition"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+
+    <!-- Navigasyon (Header) -->
+    <header id="navbar" class="fixed w-full top-0 md:top-[36px] z-40 transition-all duration-300 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                    <img src="logo.jpg" alt="Mint Veteriner Logosu" class="h-10 md:h-12 w-auto object-contain">
+                </a>
+
+                <!-- Desktop Menü -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-700 hover:text-mint font-medium transition">Ana Sayfa</a>
+                    <a href="#about" class="text-gray-700 hover:text-mint font-medium transition">Hakkımızda</a>
+                    <a href="#services" class="text-gray-700 hover:text-mint font-medium transition">Hizmetlerimiz</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-mint font-medium transition">Yorumlar</a>
+                    
+                    <!-- Call to Action -->
+                    <a href="tel:02128136992" class="btn-hover-effect bg-mint text-white px-6 py-2.5 rounded-full font-semibold shadow-lg shadow-mint/30 flex items-center gap-2 transition-transform hover:-translate-y-1">
+                        <i class="fas fa-phone-alt"></i> 0212 813 69 92
+                    </a>
+                </nav>
+
+                <!-- Mobil Menü Butonu -->
+                <button id="mobile-menu-btn" class="md:hidden text-mint text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobil Menü İçeriği -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="#home" class="block px-3 py-3 text-gray-700 font-medium border-b border-gray-50">Ana Sayfa</a>
+                <a href="#about" class="block px-3 py-3 text-gray-700 font-medium border-b border-gray-50">Hakkımızda</a>
+                <a href="#services" class="block px-3 py-3 text-gray-700 font-medium border-b border-gray-50">Hizmetlerimiz</a>
+                <a href="#reviews" class="block px-3 py-3 text-gray-700 font-medium border-b border-gray-50">Yorumlar</a>
+                <a href="tel:02128136992" class="mt-4 inline-flex justify-center items-center gap-2 bg-mint text-white px-6 py-3 rounded-full font-semibold w-full">
+                    <i class="fas fa-phone-alt"></i> 0212 813 69 92
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero (Ana Karşılama) Bölümü -->
+    <section id="home" class="hero-bg h-screen min-h-[600px] flex items-center relative pt-20">
+        <!-- Özel Şekil Ayırıcı (Shape Divider) -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-full h-[50px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,120.4,188.8,110.85,236.37,103.02,280.32,71.04,321.39,56.44Z" fill="#ffffff"></path>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-2xl" data-aos="fade-right" data-aos-duration="1200">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white text-sm font-semibold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    7/24 Acil Nöbetçi Veteriner
+                </div>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                    Can Dostlarınız İçin <br> <span class="text-mint-light">Şefkatli</span> Bakım
+                </h1>
+                <p class="text-lg md:text-xl text-gray-100 mb-8 font-light">
+                    Mint Veteriner Polikliniği olarak, en ileri teknoloji ve uzman hekim kadromuzla patili dostlarımızın sağlığı için 7 gün 24 saat yanınızdayız.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="tel:02128136992" class="btn-hover-effect bg-white text-mint font-bold px-8 py-4 rounded-full text-center text-lg flex items-center justify-center gap-3 shadow-xl transition-transform hover:-translate-y-1">
+                        <i class="fas fa-phone-alt animate-bounce"></i> Acil Durum İçin Ara
+                    </a>
+                    <a href="#services" class="border-2 border-white text-white hover:bg-white hover:text-mint font-bold px-8 py-4 rounded-full text-center text-lg transition-all duration-300">
+                        Hizmetlerimizi İncele
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İstatistik / Güven Barı -->
+    <section class="py-10 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" data-aos="fade-up">
+                <div>
+                    <i class="fas fa-user-md text-4xl text-mint mb-3"></i>
+                    <h3 class="text-3xl font-bold text-gray-800">Uzman</h3>
+                    <p class="text-gray-500 font-medium">Hekim Kadrosu</p>
+                </div>
+                <div>
+                    <i class="fas fa-microscope text-4xl text-mint mb-3"></i>
+                    <h3 class="text-3xl font-bold text-gray-800">Modern</h3>
+                    <p class="text-gray-500 font-medium">Laboratuvar</p>
+                </div>
+                <div>
+                    <i class="fas fa-heartbeat text-4xl text-mint mb-3"></i>
+                    <h3 class="text-3xl font-bold text-gray-800">100%</h3>
+                    <p class="text-gray-500 font-medium">Şefkatli Bakım</p>
+                </div>
+                <div>
+                    <i class="fas fa-door-open text-4xl text-mint mb-3"></i>
+                    <h3 class="text-3xl font-bold text-gray-800">7/24</h3>
+                    <p class="text-gray-500 font-medium">Kesintisiz Hizmet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hizmetlerimiz -->
+    <section id="services" class="py-20 bg-mint-bg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h4 class="text-mint font-bold tracking-wider uppercase mb-2">Polikliniğimiz</h4>
+                <h2 class="text-4xl font-extrabold text-gray-900">Neler Yapıyoruz?</h2>
+                <div class="w-24 h-1 bg-mint mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Hizmet 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-mint-bg text-mint rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-mint group-hover:text-white transition-colors">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">7/24 Acil Servis</h3>
+                    <p class="text-gray-600 leading-relaxed">Beklenmedik durumlarda saniyelerin önemini biliyoruz. Tam donanımlı acil servisimiz ve nöbetçi hekimlerimizle her an hazırız.</p>
+                </div>
+
+                <!-- Hizmet 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-mint-bg text-mint rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-mint group-hover:text-white transition-colors">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Aşılama & Koruyucu Hekimlik</h3>
+                    <p class="text-gray-600 leading-relaxed">Dostlarımızın uzun ve sağlıklı bir ömür sürmesi için yaşlarına ve ırklarına özel aşılama ve parazit takip programları uyguluyoruz.</p>
+                </div>
+
+                <!-- Hizmet 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-mint-bg text-mint rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-mint group-hover:text-white transition-colors">
+                        <i class="fas fa-x-ray"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Görüntüleme & Laboratuvar</h3>
+                    <p class="text-gray-600 leading-relaxed">Dijital röntgen, ultrasonografi ve tam donanımlı kan sayım/biyokimya cihazlarımızla hızlı ve kesin teşhis imkanı sunuyoruz.</p>
+                </div>
+
+                <!-- Hizmet 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-mint-bg text-mint rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-mint group-hover:text-white transition-colors">
+                        <i class="fas fa-scissors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Cerrahi Operasyonlar</h3>
+                    <p class="text-gray-600 leading-relaxed">Steril ameliyathane ortamımızda, uzman cerrahlarımız tarafından kısırlaştırma ve yumuşak doku operasyonları güvenle yapılmaktadır.</p>
+                </div>
+
+                <!-- Hizmet 5 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-16 h-16 bg-mint-bg text-mint rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-mint group-hover:text-white transition-colors">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Ağız ve Diş Sağlığı</h3>
+                    <p class="text-gray-600 leading-relaxed">Tartar temizliği, diş çekimi ve ağız içi enfeksiyon tedavileri ile minik dostlarımızın rahatça beslenmesini sağlıyoruz.</p>
+                </div>
+
+                <!-- Hizmet 6 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-16 h-16 bg-mint-bg text-mint rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:bg-mint group-hover:text-white transition-colors">
+                        <i class="fas fa-cat"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-3">Dahiliye (İç Hastalıkları)</h3>
+                    <p class="text-gray-600 leading-relaxed">Sindirim, solunum, kalp ve ürogenital sistem hastalıklarının tanı ve tedavisini güncel tıp yöntemleriyle titizlikle yapıyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımızda Bölümü -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Resim Kısmı -->
+                <div class="lg:w-1/2 relative" data-aos="fade-right">
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-mint rounded-3xl opacity-20"></div>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-mint-light rounded-3xl opacity-20"></div>
+                    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Veteriner Klinik İçi" class="rounded-3xl shadow-2xl relative z-10 w-full object-cover h-[500px]">
+                    <!-- 7/24 Badge -->
+                    <div class="absolute top-8 right-8 bg-white p-4 rounded-2xl shadow-xl z-20 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <i class="fas fa-clock text-3xl text-mint"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 font-bold uppercase">Her Zaman Buradayız</p>
+                            <p class="text-lg font-extrabold text-gray-800">7/24 Açık</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Metin Kısmı -->
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h4 class="text-mint font-bold tracking-wider uppercase mb-2">Hakkımızda</h4>
+                    <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Şişli Teşvikiye'de Güvenin ve Sevginin Adresi</h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Mint Veteriner Polikliniği olarak, ailenizin en sevimli üyeleri olan patili dostlarımıza hak ettikleri en kaliteli sağlık hizmetini sunmak amacıyla yola çıktık. Modern tıbbın tüm gerekliliklerini sağlayan teknolojik altyapımızla Şişli Teşvikiye'de hizmetinizdeyiz.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Sadece hastalık durumlarında değil, koruyucu hekimlik uygulamalarımızla da dostlarınızın sağlıklı bir ömür sürmesini sağlıyoruz. Onların sağlığı, bizim mutluluğumuzdur.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-800 font-medium">
+                            <i class="fas fa-check-circle text-mint text-xl"></i> Deneyimli ve Güleryüzlü Ekip
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-800 font-medium">
+                            <i class="fas fa-check-circle text-mint text-xl"></i> Hijyenik ve Konforlu Klinik Ortamı
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-800 font-medium">
+                            <i class="fas fa-check-circle text-mint text-xl"></i> İleri Teknoloji Teşhis Cihazları
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Yorumları / Müşteri Memnuniyeti -->
+    <section id="reviews" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="flex justify-center items-center gap-2 mb-4">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Logo" class="w-8 h-8">
+                    <span class="text-xl font-bold text-gray-800">Google Yorumları</span>
+                </div>
+                <h2 class="text-4xl font-extrabold text-gray-900">Müşterilerimiz Ne Diyor?</h2>
+                <div class="flex justify-center items-center mt-4 gap-1 text-yellow-400 text-2xl">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    <span class="text-gray-600 font-bold text-lg ml-2">4.9 / 5.0</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Yorum 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 relative" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-quote-right absolute top-6 right-6 text-4xl text-gray-100"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-mint rounded-full flex items-center justify-center text-white font-bold text-xl">Z</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Zehranur Kabadayı</h4>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">"Ne kadar teşekkür etsek az. Can yoldaşım köpeğim parazit kapmıştı tedavisi şehir değişikliği yaptığımızdan tamamlanamamıştı. Vakit kaybetmeden güler yüzle ilgilendiler..."</p>
+                </div>
+
+                <!-- Yorum 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 relative" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-quote-right absolute top-6 right-6 text-4xl text-gray-100"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-mint-light rounded-full flex items-center justify-center text-white font-bold text-xl">N</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Nur Efşan</h4>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">"Her şeyden önce iyi insanlar, kedimin tedavileri için buraya geliyorum, kesinlikle tavsiye ederim çok güvenilir bir klinik."</p>
+                </div>
+
+                <!-- Yorum 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 relative" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-quote-right absolute top-6 right-6 text-4xl text-gray-100"></i>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-white font-bold text-xl">S</div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Shona Ford</h4>
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic leading-relaxed">"I moved to Istanbul from England with my greyhound in January, and very luckily moved right down the road from this vet. Very professional and friendly!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim CTA ve Harita -->
+    <section id="contact" class="bg-white">
+        <!-- CTA Banner GÜNCELLENDİ: Arka plana resim ve gradient eklendi -->
+        <div class="relative bg-mint py-20 overflow-hidden">
+            <!-- Arka Plan Görseli (Hafif Silik) -->
+            <div class="absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Veteriner Acil Arka Plan" class="w-full h-full object-cover opacity-15 mix-blend-luminosity">
+            </div>
+            <!-- Ana Renge Uyum İçin Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-mint/90 to-mint/60"></div>
+            
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10" data-aos="zoom-in">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Acil Bir Durum Mu Var?</h2>
+                <p class="text-mint-bg text-lg mb-8 opacity-90">Klinik telefonlarımız 7 gün 24 saat açıktır. Çekinmeden bizi arayabilirsiniz.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="tel:02128136992" class="bg-white text-mint font-bold px-8 py-4 rounded-full text-xl flex items-center gap-3 shadow-lg hover:bg-gray-100 transition-all w-full sm:w-auto justify-center">
+                        <i class="fas fa-phone-volume animate-pulse"></i> Hemen Ara: 0212 813 69 92
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- İletişim Bilgileri -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-8">İletişim Bilgilerimiz</h2>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 bg-mint-bg text-mint rounded-2xl flex items-center justify-center text-2xl shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-1">Adresimiz</h4>
+                                <p class="text-gray-600">Teşvikiye, Deryadil Sokağı no:106B, <br>34357 Şişli/İstanbul</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 bg-mint-bg text-mint rounded-2xl flex items-center justify-center text-2xl shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-1">Telefon</h4>
+                                <a href="tel:02128136992" class="text-gray-600 hover:text-mint text-lg font-medium transition">(0212) 813 69 92</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-14 h-14 bg-mint-bg text-mint rounded-2xl flex items-center justify-center text-2xl shrink-0">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-gray-800 mb-1">Çalışma Saatleri</h4>
+                                <p class="text-mint font-bold text-lg bg-mint-bg inline-block px-3 py-1 rounded-lg">7 Gün 24 Saat Açığız</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harita -->
+                <div class="rounded-3xl overflow-hidden shadow-xl h-[400px]" data-aos="fade-left">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Teşvikiye,%20Deryadil%20Sokağı%20no:106B,%20Şişli/İstanbul&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 pb-28"> <!-- pb-28: Rozet alanı için ekstra boşluk -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                
+                <!-- Footer Logo -->
+                <div class="flex flex-col items-center md:items-start">
+                    <div class="mb-4 bg-white/5 p-2 rounded-xl">
+                        <img src="logo.jpg" alt="Mint Veteriner Logosu" class="h-12 w-auto object-contain rounded">
+                    </div>
+                    <p class="text-sm text-gray-400 max-w-xs">Can dostlarınız için güvenilir, şefkatli ve modern veteriner hekimlik hizmetleri.</p>
+                </div>
+
+                <!-- Footer Linkler -->
+                <div class="flex flex-col items-center md:items-start space-y-2">
+                    <h4 class="text-white font-bold text-lg mb-2">Hızlı Linkler</h4>
+                    <a href="#home" class="hover:text-mint transition">Ana Sayfa</a>
+                    <a href="#about" class="hover:text-mint transition">Hakkımızda</a>
+                    <a href="#services" class="hover:text-mint transition">Hizmetlerimiz</a>
+                    <a href="#contact" class="hover:text-mint transition">İletişim</a>
+                </div>
+
+                <!-- Footer Sosyal -->
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-white font-bold text-lg mb-4">Bizi Takip Edin</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/mintveterinerklinigi/?hl=en" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-mint text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/mintveterinerklinigi/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-mint text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2024 Mint Veteriner Polikliniği. Tüm Hakları Saklıdır.</p>
+                <p class="mt-2 md:mt-0">Design & Code by UNAL Partnerlik</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SABİT SOL ALT UNAL PARTNERLİK ROZETİ -->
+    <a href="#" class="fixed bottom-6 left-6 z-50 flex items-center bg-unal-bg rounded-2xl p-2 pr-5 shadow-2xl border border-gray-700/50 hover:scale-105 transition-transform group cursor-default" style="backdrop-filter: blur(8px);">
+        <!-- "unal.jpg" Dosyası -->
+        <img src="unal.jpg" alt="UNAL Partnerlik Logo" class="w-[52px] h-[52px] rounded-xl mr-4 object-cover border border-gray-600/50">
+        <div class="flex flex-col justify-center">
+            <span class="text-unal-gold font-extrabold text-[15px] leading-tight tracking-wide">UNAL PARTNERLİK</span>
+            <span class="text-gray-300 font-bold text-[11px] leading-tight tracking-wider mt-0.5">DEMO WEBSİTESİDİR</span>
+        </div>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // AOS Animasyon Başlatıcısı
+        AOS.init({
+            duration: 1000, // Animasyon süresi
+            once: true,     // Sadece aşağı inerken 1 kere çalışsın
+            offset: 100     // Ekranın ne kadar altında başlayacağı
+        });
+
+        // Navbar Scroll Efekti (Kaydırınca küçülen ve beyazlaşan menü)
+        const navbar = document.getElementById('navbar');
+        const topBarHeight = 36; // Üst siyah barın yüksekliği
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav');
+                navbar.classList.remove('md:top-[36px]');
+                navbar.classList.add('md:top-0');
+            } else {
+                navbar.classList.remove('glass-nav');
+                navbar.classList.add('md:top-[36px]');
+                navbar.classList.remove('md:top-0');
+            }
+        });
+
+        // Mobil Menü Toggle İşlemi
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Mobil Menü linklerine tıklandığında menüyü kapat
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
